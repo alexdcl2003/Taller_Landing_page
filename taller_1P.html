@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master en Arquitectura Web & Frontend Semántico | Tech Academy</title>
+  <meta name="description" content="Especialízate en desarrollo web moderno, accesibilidad (WCAG), rendimiento y SEO técnico. Formación práctica para ingenieros de software.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ejemplo.com/master-arquitectura-web">
+
+  <meta property="og:title" content="Master en Arquitectura Web & Frontend Semántico">
+  <meta property="og:description" content="Aprende a construir aplicaciones web accesibles, rápidas y escalables con estándares W3C.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ejemplo.com/master-arquitectura-web">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200">
+
+  <link rel="stylesheet" href="./taller_css_1P.css">
+</head>
+<body>
+
+  <header>
+    <a href="/" aria-label="Inicio de Tech Academy">
+      <svg width="180" height="40" viewBox="0 0 180 40" aria-hidden="true">
+        <rect x="0" y="4" width="32" height="32" rx="8" fill="#0284c7"/>
+        <path d="M9 15L4 20L9 25M23 15L28 20L23 25M18 13L14 27" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+        <text x="40" y="26" font-family="sans-serif" font-weight="800" font-size="19" fill="#0f172a">Tech</text>
+        <text x="88" y="26" font-family="sans-serif" font-weight="400" font-size="19" fill="#0284c7">Academy</text>
+      </svg>
+    </a>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="#programa">Programa</a></li>
+        <li><a href="#instructores">Instructores</a></li>
+        <li><a href="#faq">Preguntas</a></li>
+        <li><a href="#registro" class="nav-cta">Inscribirse</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="registro" aria-labelledby="hero-title" class="hero">
+      <div class="hero-content">
+        <span class="badge">Octavo Semestre | Ingeniería de Software</span>
+        <h1 id="hero-title">Acelera tu Carrera con Arquitectura Web Avanzada</h1>
+        <p>Aprende a maquetar profesionalmente, domina las reglas de accesibilidad WCAG y optimiza el posicionamiento SEO desde el motor del DOM.</p>
+        
+        <figure class="hero-banner">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80" alt="Estudiantes de ingeniería colaborando en desarrollo de software" width="800" height="450">
+          <figcaption>Clases en vivo y proyectos reales enfocados en código limpio.</figcaption>
+        </figure>
+      </div>
+
+      <form action="/registro" method="POST" class="form-card">
+        <h2>Reserva tu cupo gratuito</h2>
+        <p class="form-subtext">Únete a la siguiente cohorte de especialización web.</p>
+
+        <div>
+          <label for="user-name">Nombre completo *</label>
+          <input 
+            type="text" 
+            id="user-name" 
+            name="name" 
+            required 
+            minlength="3" 
+            maxlength="60" 
+            pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$" 
+            title="Solo se permiten letras y espacios."
+            autocomplete="name" 
+            placeholder="Ej. Ana Martínez"
+          >
+        </div>
+
+        <div>
+          <label for="user-email">Correo profesional o académico *</label>
+          <input 
+            type="email" 
+            id="user-email" 
+            name="email" 
+            required 
+            autocomplete="email" 
+            placeholder="ana@empresa.com"
+          >
+        </div>
+
+        <div>
+          <label for="user-phone">Teléfono celular (10 dígitos) *</label>
+          <input 
+            type="tel" 
+            id="user-phone" 
+            name="phone" 
+            required 
+            pattern="[0-9]{10}" 
+            title="Ingresa exactamente 10 dígitos numéricos." 
+            autocomplete="tel" 
+            placeholder="0991234567"
+          >
+        </div>
+
+        <div>
+          <label for="user-role">Nivel de experiencia actual *</label>
+          <select id="user-role" name="role" required>
+            <option value="" disabled selected>Selecciona tu nivel</option>
+            <option value="estudiante">Estudiante Universitario</option>
+            <option value="junior">Desarrollador Junior</option>
+            <option value="mid">Desarrollador Mid / Senior</option>
+          </select>
+        </div>
+
+        <fieldset>
+          <legend>Términos y condiciones *</legend>
+          <p class="checkbox-group">
+            <input type="checkbox" id="terms-accept" name="terms" value="accepted" required>
+            <label for="terms-accept">
+              Acepto las <a href="/politicas" target="_blank" rel="noopener">políticas de privacidad</a> y el tratamiento de mis datos personales.
+            </label>
+          </p>
+        </fieldset>
+
+        <button type="submit">Iniciar Inscripción Directa</button>
+        <small>Garantía de privacidad. Sin cargos ocultos.</small>
+      </form>
+    </section>
+
+    <section aria-label="Estadísticas del programa" class="stats-bar">
+      <div class="stat-item">
+        <strong>98%</strong>
+        <span>Empleabilidad Egresados</span>
+      </div>
+      <div class="stat-item">
+        <strong>100%</strong>
+        <span>Proyectos Prácticos</span>
+      </div>
+      <div class="stat-item">
+        <strong>W3C</strong>
+        <span>Estándares Oficiales</span>
+      </div>
+      <div class="stat-item">
+        <strong>4.9/5</strong>
+        <span>Calificación Alumnos</span>
+      </div>
+    </section>
+
+    <section id="programa" aria-labelledby="programa-title">
+      <h2 id="programa-title" class="section-title">¿Qué Vas a Dominar en este Programa?</h2>
+      
+      <div class="grid-cards">
+        <article class="card">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=500&auto=format&fit=crop&q=80" alt="Estructura de código en pantalla" width="500" height="300" loading="lazy">
+            <figcaption>Módulo 1</figcaption>
+          </figure>
+          <h3>Semántica y Arquitectura DOM</h3>
+          <p>Aprende a estructurar documentos web limpios sin "divitis", optimizando el árbol del DOM para motores de búsqueda y tecnologías de asistencia.</p>
+        </article>
+
+        <article class="card">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=80" alt="Panel de analítica y rendimiento web" width="500" height="300" loading="lazy">
+            <figcaption>Módulo 2</figcaption>
+          </figure>
+          <h3>SEO Técnico y Performance</h3>
+          <p>Configura Open Graph, datos estructurados Schema.org, metadatos dinámicos y mejora la velocidad según las métricas Core Web Vitals.</p>
+        </article>
+
+        <article class="card">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=500&auto=format&fit=crop&q=80" alt="Persona usando lector de pantalla y teclado adaptado" width="500" height="300" loading="lazy">
+            <figcaption>Módulo 3</figcaption>
+          </figure>
+          <h3>Accesibilidad Web (A11y)</h3>
+          <p>Aplica las directrices WCAG 2.1, etiquetas ARIA, manejo correcto del foco del teclado y pruebas interactivas con lectores de pantalla.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="instructores" aria-labelledby="instructores-title">
+      <h2 id="instructores-title" class="section-title">Aprende con Expertos de la Industria</h2>
+      
+      <div class="instructors-grid">
+        <article class="instructor-card">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80" alt="Fotografía de la Ing. Sofía Ramos" class="avatar" width="120" height="120" loading="lazy">
+          <h3>Ing. Sofía Ramos</h3>
+          <p class="role">Lead Frontend Architect</p>
+          <p>Especialista en accesibilidad web y sistemas de diseño a escala para empresas internacionales.</p>
+        </article>
+
+        <article class="instructor-card">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&auto=format&fit=crop&q=80" alt="Fotografía del Msc. Carlos Mendoza" class="avatar" width="120" height="120" loading="lazy">
+          <h3>Msc. Carlos Mendoza</h3>
+          <p class="role">Consultor SEO Técnico</p>
+          <p>Más de 10 años optimizando el rendimiento de plataformas de alto tráfico y arquitecturas Web.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="faq" aria-labelledby="faq-title" class="faq-section">
+      <h2 id="faq-title" class="section-title">Preguntas Frecuentes</h2>
+
+      <details>
+        <summary>¿Se requiere experiencia previa en programación?</summary>
+        <p>Es recomendable tener conocimientos básicos de computación y lógica. El curso inicia con los fundamentos de estructura semántica y avanza hasta niveles profesionales de ingeniería web.</p>
+      </details>
+
+      <details>
+        <summary>¿Qué certificación obtendré al finalizar?</summary>
+        <p>Al aprobar los talleres prácticos, recibirás un certificado digital verificable en "Arquitectura y Semántica Web Avanzada" avalado por Tech Academy.</p>
+      </details>
+
+      <details>
+        <summary>¿El curso incluye las normas de accesibilidad gubernamentales?</summary>
+        <p>Sí, cubrimos los estándares WCAG 2.1 niveles A y AA necesarios para cumplir con normativas internacionales y locales de accesibilidad digital.</p>
+      </details>
+    </section>
+  </main>
+
+  <aside aria-label="Información complementaria" class="newsletter-aside">
+    <h2>¿Quieres recibir guías de estudio gratuitas?</h2>
+    <p>Suscríbete a nuestro boletín semanal de desarrollo web y estándares del W3C.</p>
+    <a href="#registro" class="cta-button-alt">Ir al Formulario</a>
+  </aside>
+
+  <footer>
+    <p>&copy; 2026 Tech Academy. Taller de Desarrollo Web - Octavo Semestre de Ingeniería de Software.</p>
+    <nav aria-label="Enlaces legales del pie de página">
+      <ul>
+        <li><a href="/privacidad">Política de Privacidad</a></li>
+        <li><a href="/terminos">Términos de Servicio</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+</body>
+</html>
