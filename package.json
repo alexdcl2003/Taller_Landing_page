@@ -1,0 +1,8 @@
+{
+  "name": "taller-landing-page",
+  "version": "1.0.0",
+  "description": "Landing page del taller (HTML y CSS)",
+  "scripts": {
+    "test": "node tests/check.js"
+  }
+}
