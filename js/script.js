@@ -5,29 +5,40 @@ document.addEventListener('DOMContentLoaded', function () {
   // Se desactiva la validación nativa para que se ejecute la nuestra
   form.noValidate = true;
 
-  var nombre = document.getElementById('user-name');
-  var correo = document.getElementById('user-email');
-  var patronNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
   var patronCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var patronTelefono = /^\d{10}$/;
+
+  function etiquetaDe(campo) {
+    var etiqueta = form.querySelector('label[for="' + campo.id + '"]');
+    var texto = etiqueta ? etiqueta.textContent : (campo.name || campo.id);
+    return texto.replace('*', '').trim();
+  }
 
   form.addEventListener('submit', function (evento) {
-    var errores = [];
-    var valorNombre = nombre.value.trim();
-    var valorCorreo = correo.value.trim();
-
-    if (valorNombre === '') {
-      errores.push('El nombre completo es obligatorio');
-    } else if (valorNombre.length < 3 || !patronNombre.test(valorNombre)) {
-      errores.push('El nombre debe tener mínimo 3 caracteres y solo letras y espacios');
-    }
-
-    if (valorCorreo === '') {
-      errores.push('El correo es obligatorio');
-    } else if (!patronCorreo.test(valorCorreo)) {
-      errores.push('El correo no tiene un formato válido (ejemplo: ana@empresa.com)');
-    }
-
     evento.preventDefault();
+    var errores = [];
+
+    form.querySelectorAll('input, select, textarea').forEach(function (campo) {
+      if (campo.type === 'submit' || campo.type === 'button') return;
+
+      var esCheck = campo.type === 'checkbox';
+      var valor = campo.value.trim();
+      var vacio = esCheck ? !campo.checked : valor === '';
+      var nombre = etiquetaDe(campo);
+
+      if (campo.required && vacio) {
+        errores.push('Falta completar: ' + nombre);
+      } else if (vacio || esCheck) {
+        return;
+      } else if (campo.type === 'email' && !patronCorreo.test(valor)) {
+        errores.push('El correo no tiene un formato válido (ejemplo: ana@empresa.com)');
+      } else if (campo.type === 'tel' && !patronTelefono.test(valor)) {
+        errores.push('El teléfono debe tener exactamente 10 dígitos');
+      } else if (!campo.checkValidity()) {
+        errores.push(nombre + ': ' + campo.validationMessage);
+      }
+    });
+
     if (errores.length > 0) {
       alert(errores.join('\n'));
     } else {
