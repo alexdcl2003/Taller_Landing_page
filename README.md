@@ -17,9 +17,10 @@ Landing page del "Máster en Arquitectura Web & Frontend Semántico | Tech Acade
 ## Integrantes
 
 Alexis Cajamarca
-- [Nombre 2]
-- [Nombre 3]
-- [Nombre 4]
+Carlos Calle
+Debora Bermeo
+Eduardo Alvarado
+Cristhian Gonzales
 
 ## Información académica
 
