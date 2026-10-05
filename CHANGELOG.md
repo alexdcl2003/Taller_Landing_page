@@ -6,8 +6,8 @@ Todos los cambios importantes de este proyecto se documentan aquí.
 
 ### Agregado
 - Pruebas automáticas (`tests/check.js` y `package.json`) que verifican el título, el idioma, el CSS y la imagen (PR #2).
-- Validación del número telefónico al enviar el formulario, en la carpeta `js/` (PR #4).
-- Workflow de integración continua con GitHub Actions, en `.github/workflows/`, que ejecuta las pruebas y genera un reporte (PR #5).
+- Validación del número telefónico al enviar el formulario, en `script.js` (PR #4).
+- Workflow de integración continua con GitHub Actions, en `ci.yml`, que ejecuta las pruebas y genera un reporte (PR #5).
 
 ### Corregido
 - Se renombra la carpeta `assest` a `assets` y se actualizan las rutas (PR #1).
