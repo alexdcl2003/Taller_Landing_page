@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validar estructura del proyecto
+        run: |
+          test -f taller_1P.html
+          test -d css
+
+      - name: Ejecutar pruebas y generar reporte
+        shell: bash
+        run: npm test 2>&1 | tee reporte.txt
+
+      - name: Publicar reporte en el resumen
+        if: always()
+        run: cat reporte.txt >> $GITHUB_STEP_SUMMARY
+
+      - name: Guardar reporte como artefacto
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-pruebas
+          path: reporte.txt
